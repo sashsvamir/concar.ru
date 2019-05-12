@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +12,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/category/{slug}', 'CategoryController')
+    ->where('slug', '[\d\w]+[/[\d\w]+]?')
+    ->name('category-view');
+
+Route::get('/page/{slug}', 'PageController')
+    ->name('page-view');
+
+Route::get('/', 'SiteController')
+    ->name('site-index');
