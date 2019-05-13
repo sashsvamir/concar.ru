@@ -13,6 +13,7 @@
 
 	<link rel="stylesheet" type="text/css" href="{{ mix('css/feedback-form.css') }}">
 
+    @stack('styles')
 </head>
 <body class="{{ Route::currentRouteName() }}">
 
@@ -37,7 +38,7 @@
 <div class="columns">
 
 	<div class="column-left nav">
-		@yield('menu', View::make('layouts.menu'))
+        @include('layouts.menu')
 	</div>
 
 
@@ -48,7 +49,7 @@
 </div>
 
 
-@yield('footer', View::make('layouts.footer'))
+@include('layouts.footer')
 
 
 <script src="{{ mix('js/app.js') }}"></script>
@@ -58,8 +59,9 @@
 <script src="{{ mix('js/feedback-form.js') }}"></script>
 
 
-@yield('counters', View::make('layouts.counters'))
+@stack('scripts')
 
+@include('layouts.counters')
 
 </body>
 </html>
