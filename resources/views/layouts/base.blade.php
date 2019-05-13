@@ -11,8 +11,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="{{ mix('css/app.css') }}">
 
-	<link rel="stylesheet" type="text/css" href="{{ mix('css/feedback-form.css') }}">
-
     @stack('styles')
 </head>
 <body class="{{ Route::currentRouteName() }}">
@@ -55,8 +53,7 @@
 <script src="{{ mix('js/app.js') }}"></script>
 
 
-<?= (new \App\Http\FeedbackFormWidget\Widget())->run() ?>
-<script src="{{ mix('js/feedback-form.js') }}"></script>
+@widget('feedback-form.widget')
 
 
 @stack('scripts')
