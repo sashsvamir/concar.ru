@@ -3,6 +3,8 @@
 namespace App\Widgets\FeedbackForm;
 
 use Arrilot\Widgets\AbstractWidget;
+use Illuminate\Support\Facades\View;
+
 
 class Widget extends AbstractWidget
 {
@@ -28,16 +30,16 @@ class Widget extends AbstractWidget
      * Treat this method as a controller action.
      *
      * Return view() or other content to display.
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
      */
     public function run()
     {
         if (env('APP_DEBUG') || in_array(env('APP_ENV'), ['local', 'test'])) {
-            // not production mode
+            // if not production mode
             $this->config['url'] = $this->url_dev;
         }
 
-        return view('widgets.feedback_form', [
+        return View::file(__DIR__ . DIRECTORY_SEPARATOR . 'view.blade.php', [
             'config' => $this->config,
         ]);
     }

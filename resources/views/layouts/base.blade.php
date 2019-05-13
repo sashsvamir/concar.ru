@@ -52,8 +52,7 @@
 
 <script src="{{ mix('js/app.js') }}"></script>
 
-
-@widget('feedback-form.widget')
+@widget(\App\Widgets\FeedbackForm\Widget::class)
 
 
 @stack('scripts')
