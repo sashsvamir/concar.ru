@@ -127,6 +127,7 @@ body
 .footer
     display: flex
     justify-content: space-between
+    flex-flow: row wrap
     align-items: flex-start
     margin-top: 4rem
     background: #ddd
@@ -134,8 +135,9 @@ body
     padding: 1rem 2rem
 
     .nav
-        h4
-            display: inline-block
+
+        label
+            font-weight: 500
             margin: 0 .5rem 0 0
 
     .requisites
@@ -145,6 +147,18 @@ body
 
                 &:hover
                     text-decoration: underline
+    .admin-entry
+        flex-basis: 100%
+        a
+            display: inline-block
+            width: 20px
+            height: 20px
+            background: url("/images/gear.svg") no-repeat center
+            opacity: .4
+            text-indent: 99px
+            overflow: hidden
+            &:hover
+                opacity: 1
 
 
 @media screen and (max-width: $sm-breakpoint-max)
@@ -185,7 +199,7 @@ body
             margin-bottom: 3rem
 
     .footer
-        flex-direction: column
+        flex-flow: column nowrap
         align-items: center
 
         .nav
@@ -197,9 +211,11 @@ body
             select
                 max-width: 100%
 
-
         .requisites
             text-align: center
+
+        .admin-entry
+            margin-top: 10px
 
 
 // --------------------- Routes ---------------------

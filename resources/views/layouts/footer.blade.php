@@ -3,8 +3,8 @@
 <div class="footer">
 
 	<div class="nav" id="nav-products-select">
-		<h4>Ремни:</h4>
-		<select class="gs_normal">
+		<label for="footer-menu">Ремни:</label>
+		<select id="footer-menu" class="gs_normal">
 			<option value=" ">--- Выбор ---</option>
 			<option value="/main.php?a=11">Вариаторные скоростные ремни</option>
 			<option value="/main.php?a=12">Двойные клиновые ремни</option>
@@ -43,6 +43,10 @@
 			<a href="tel:+7(812)702-70-92">+7(812)702-70-92</a>
 		</p>
 	</div>
+
+    <div class="admin-entry">
+        <a href="@guest {{ route('login') }} @else {{ route('admin') }} @endguest" title="Войти">Войти</a>
+    </div>
 
 </div>
 

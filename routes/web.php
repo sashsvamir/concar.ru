@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,9 @@ Route::get('/page/{slug}', 'PageController')
 
 Route::get('/', 'SiteController')
     ->name('site-index');
+
+
+Auth::routes(['register' => App::environment('local'), 'reset' => false, 'verify' => false]);
+
+Route::get('/admin', 'Admin\HomeController@index')->name('admin');
+

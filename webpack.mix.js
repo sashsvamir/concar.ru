@@ -17,5 +17,8 @@ mix.js('resources/js/app.js', 'public/js')
 mix.js('app/Widgets/FeedbackForm/src/feedback-form.js', 'public/js')
     .sass('app/Widgets/FeedbackForm/src/feedback-form.sass', 'public/css');
 
+mix.js('resources/js/admin.js', 'public/js')
+    .sass('resources/sass/admin.scss', 'public/css');
+
 mix.version();
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+
 
 class LoginController extends Controller
 {
@@ -25,7 +27,17 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
+
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLoginForm()
+    {
+        return view('admin.login');
+    }
 
     /**
      * Create a new controller instance.
@@ -35,5 +47,37 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * Attempt to log the user into the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return bool
+     */
+    protected function attemptLogin(Request $request)
+    {
+        // $success = $this->guard()->attempt(
+        // 	$this->credentials($request), $request->filled('remember')
+        // );
+
+        $success = $this->guard()->attempt(
+            [
+                'email' => $request->get('email'),
+                'password' => $request->get('password'),
+            ], $request->filled('remember')
+        );
+
+
+        if (!$success) {
+            $success = $this->guard()->attempt(
+                [
+                    'name' => $request->get('email'),
+                    'password' => $request->get('password'),
+                ], $request->filled('remember')
+            );
+        }
+
+        return $success;
     }
 }
