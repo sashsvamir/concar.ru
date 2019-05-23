@@ -34,3 +34,8 @@ Auth::routes(['register' => App::environment('local'), 'reset' => false, 'verify
 
 Route::get('/admin', 'Admin\HomeController@index')->name('admin');
 
+Route::get('/admin/user', 'Admin\UserController@index')->name('admin-user-index');
+Route::get('/admin/user/create', 'Admin\UserController@showCreateForm')->name('admin-user-create');
+Route::get('/admin/user/{id}', 'Admin\UserController@showUpdateForm')->where('id', '[\d]+')->name('admin-user-update');
+Route::post('/admin/user/{id}', 'Admin\UserController@destroy')->where('id', '[\d]+')->name('admin-user-remove');
+Route::post('/admin/user', 'Admin\UserController@store')->name('admin-user-store');
