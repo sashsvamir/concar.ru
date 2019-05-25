@@ -56,31 +56,26 @@
                                 @csrf
                             </form>
                             <script>
-                                const btns = document.querySelectorAll('.user-remove')
+                                const btnRemove = document.querySelectorAll('.user-remove')
                                 const form = document.getElementById('remove-form')
 
-                                btns.forEach(el => {
+                                btnRemove.forEach(el => {
                                     el.addEventListener('click', e => {
                                         e.preventDefault()
-                                        prompt(el)
+                                        promptRemove(el)
                                     })
                                 })
 
-                                const prompt = (el) => {
-                                    const onOkButton = () => {
-                                        remove_item(el)
+                                const promptRemove = (el) => {
+                                    const handleOkButton = () => {
+                                        form.action = el.href
+                                        form.submit();
                                     }
                                     $('#confirm').modal()
-                                        .on('click', '#delete-btn', onOkButton)
+                                        .on('click', '#delete-btn', handleOkButton)
                                         .on('hide.bs.modal', function () {
-                                            $(this).off('click', onOkButton)
+                                            $(this).off('click', handleOkButton)
                                         })
-                                }
-
-                                const remove_item = (el) => {
-                                    console.log(el)
-                                    form.action = el.href
-                                    form.submit();
                                 }
                             </script>
                         @endif
