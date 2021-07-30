@@ -50,6 +50,10 @@
 @include('layouts.footer')
 
 
+<div class="copy-block copy-st" style="font-size:11px;padding-bottom:10px;text-align:center;background:#ddd;">
+    <span style="opacity:.4;">Разработка и продвижение сайта — <a href="https://shykin.ru" target="_blank">shykin.ru</a></span>
+</div>
+
 <script src="{{ mix('js/app.js') }}"></script>
 
 @widget(\App\Widgets\FeedbackForm\Widget::class)
