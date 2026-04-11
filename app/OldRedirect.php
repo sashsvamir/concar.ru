@@ -48,7 +48,7 @@ class OldRedirect
 
         // if request old form
         if ($request->getRequestUri() === '/form.php') {
-            return 'http://intermehanika.ru/feedback'; // redirect url
+            return 'https://intermehanika-ltd.ru/feedback'; // redirect url
         }
 
         // if redirect not found

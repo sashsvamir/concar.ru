@@ -12,7 +12,7 @@ require('tingle.js/dist/tingle.min.css');
 
 
 	const config = {
-		//url: 'https://intermehanika.ru/feedback/frame/index',
+		//url: 'https://intermehanika-ltd.ru/feedback/frame/index',
 		//url: 'http://shop/feedback/frame/index',
 		modalClass: 'modal-feedback-form',
 		buttonClass: 'modal-feedback-control',

@@ -14,7 +14,7 @@ class Widget extends AbstractWidget
      * @var array
      */
     protected $config = [
-        'url' => 'https://intermehanika.ru/feedback/frame/index?referer=concar',
+        'url' => 'https://intermehanika-ltd.ru/feedback/frame/index?referer=concar',
         'class' => 'modal-feedback-control',
         'withAssets' => true,
     ];

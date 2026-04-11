@@ -23,8 +23,8 @@
 	</div>
 
 	<ul class="nav">
-		<li><a href="http://intermehanika.ru">ООО Интермеханика ЛТД</a></li>
-		<li><a href="http://intermehanika.ru/feedback">Форма запроса</a></li>
+		<li><a href="https://intermehanika-ltd.ru">ООО Интермеханика ЛТД</a></li>
+		<li><a href="https://intermehanika-ltd.ru/feedback">Форма запроса</a></li>
 		<li><a href="{{ route('page-view', ['slug' => 'contacts'], false) }}">Контакты</a></li>
 	</ul>
 </div>
